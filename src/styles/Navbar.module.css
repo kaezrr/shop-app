@@ -1,0 +1,11 @@
+.nav {
+  width: 100%;
+  background-color: wheat;
+  display: flex;
+  padding: 0px 20px;
+  gap: 30px;
+}
+
+.nav > a {
+  color: black;
+}
