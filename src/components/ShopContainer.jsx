@@ -4,13 +4,13 @@ import getProducts from "../fetcher.js";
 import Card from "./Card";
 
 function ShopContainter() {
-  const [data, setData] = useState(null);
+  const [items, setItems] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     getProducts()
-      .then((response) => setData(response))
+      .then((response) => setItems(response))
       .catch((error) => setError(error))
       .finally(() => setLoading(false));
   }, []);
@@ -20,7 +20,7 @@ function ShopContainter() {
 
   return (
     <main className={styles.shop}>
-      {data.map((e) => (
+      {items.map((e) => (
         <Card
           key={e.id}
           name={e.title}
